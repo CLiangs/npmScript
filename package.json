@@ -6,19 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --output-style compressed -o dist/css src/css",
-    "lint": "eslint src/js",
-    "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/app.js && uglifyjs src/js/*.js -m -c -o dist/js/app.min.js",
-    "serve": "browser-sync start --server --files 'dist/css/*.css, dist/js/*.js'",
-    "build:js": "npm run lint && npm run uglify",
-    "build:all": "npm run scss && npm run build:js "
+    "start": "node server/index.js",
+    "bable": "babel src/js/index.js -o dist/index.js",
+    "build": "npm run scss && npm run bable"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.9",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.26.3",
-    "eslint": "^5.15.0",
     "node-sass": "^4.11.0",
-    "postcss-cli": "^6.1.2",
-    "uglify-js": "^3.4.9"
+    "shtml2html": "^1.0.5"
   },
   "repository": {
     "type": "git",

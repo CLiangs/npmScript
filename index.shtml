@@ -11,14 +11,13 @@
     <meta name="keywords" content="">
     <meta name="author" content="Chenliang(930225) | 2019-02-21">
     <meta name="editor" content="Chenliang(930225) | 2019-02-21">
-    <link rel="stylesheet" href="dist/css/style.css">
+    <link type="text/html" rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
     <div class="title">npm script</div>
-    
-    <script type="text/html" src="dist/js/app.min.js"></script>
+    <script type="text/html" src="js/index.js"></script>
 </body>
 
 </html>

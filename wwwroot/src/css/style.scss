@@ -1,0 +1,8 @@
+@import 'mixin';
+@import 'color';
+
+.title {
+  color: $basecolor;
+  @include textOverflow();
+  transition: 0.3s all;
+}
