@@ -15,17 +15,25 @@ var port = 3000;
 // server.listen(port,hostName,function(){
 //     console.log(`服务器运行在http://localhost:${port}`);
 // });
-
+// node-sass
 sass.render({
-    file: 'src/css/style.scss',
+    file: 'wwwroot/css/style.scss',
     outFile: 'dist/css/style.css'
-}, function(err, result) { // node-style callback from v3.0.0 onwards
+}, function(err, result) { 
     if(err) {
         throw err;
     }
-    fs.writeFile('dist/css/style.css', result.css, err => {
-        if (err) {
-            throw err;
-        }
-    })
+    // 读取目录内容
+    fs.readdir('wwwroot', {withFileTypes :true},function(err, result){
+        console.log(result)
+    }),
+    // 创建 dist/css 目录
+    fs.mkdir('dist/css', { recursive: true }, (err) => {
+        if (err) throw err;
+        fs.writeFile('dist/css/style.css', result.css, err => {
+            if (err) {
+                throw err;
+            }
+        })
+    });
 });

@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --output-style compressed -o dist/css src/css",
+    "scss": "node-sass --output-style compressed -o dist/css wwwroot",
     "start": "node server/index.js",
-    "bable": "babel src/js/index.js -o dist/index.js",
+    "bable": "babel --output-style compressed -o dist/index.js wwwroot",
     "build": "npm run scss && npm run bable"
   },
   "devDependencies": {
